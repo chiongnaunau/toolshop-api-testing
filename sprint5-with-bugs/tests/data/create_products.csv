@@ -1,0 +1,4 @@
+name,description,price,category_id,brand_id,product_image_id,is_location_offer,is_rental,expected_status
+"Drill Pro","High-power drill",29.99,1,1,1,1,0,200
+"Invalid Product","",0,999,999,,0,0,422
+"Cheap Hammer","Basic hammer",-5.00,1,1,1,0,1,422

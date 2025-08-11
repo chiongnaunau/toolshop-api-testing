@@ -1,0 +1,57 @@
+name: Run Postman API Tests
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Run Get products data-driven tests
+        run: |
+          newman run ./sprint5-with-bugs/tests/Toolshop\ API\ Tests\ -\ Get\ products.json \
+            -e ./sprint5-with-bugs/tests/toolshop_env.json \
+            --folder "Get products" \
+            --iteration-data ./sprint5-with-bugs/tests/data/products_data.csv \
+            --reporters cli,junit \
+            --reporter-junit-export results-get-products.xml
+
+      - name: Run Get users data-driven tests
+        run: |
+          newman run ./sprint5-with-bugs/tests/Toolshop\ API\ Tests\ -\ Get\ users.json \
+            -e ./sprint5-with-bugs/tests/toolshop_env.json \
+            --folder "Get users" \
+            --iteration-data ./sprint5-with-bugs/tests/data/users_get_data.csv \
+            --reporters cli,junit \
+            --reporter-junit-export results-get-users.xml
+
+      - name: Run Post products data-driven tests
+        run: |
+          newman run ./sprint5-with-bugs/tests/Toolshop\ API\ Tests\ -\ Store\ new\ product.json \
+            -e ./sprint5-with-bugs/tests/toolshop_env.json \
+            --folder "Store new product" \
+            --iteration-data ./sprint5-with-bugs/tests/data/create_products.csv \
+            --reporters cli,junit \
+            --reporter-junit-export results-post-products.xml
+
+      - name: Run Put users data-driven tests
+        run: |
+          newman run ./sprint5-with-bugs/tests/Toolshop\ API\ Tests\ -\ Change\ password.json \
+            -e ./sprint5-with-bugs/tests/toolshop_env.json \
+            --folder "Change password" \
+            --iteration-data ./sprint5-with-bugs/tests/data/change_password.csv \
+            --reporters cli,junit \
+            --reporter-junit-export results-put-users.xml

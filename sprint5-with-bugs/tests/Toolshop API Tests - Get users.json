@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "9edc7c81-0455-4e39-a69e-799a1b312780",
+		"name": "Toolshop API Tests - Get users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47470460",
+		"_collection_link": "https://chiongnaunau-0d024cef-133788.postman.co/workspace/Hung-Le-Huynh-Nhat's-Workspace~a3e0a236-bb26-4282-8bd4-0605c91a8660/collection/47470460-9edc7c81-0455-4e39-a69e-799a1b312780?action=share&source=collection_link&creator=47470460"
+	},
+	"item": [
+		{
+			"name": "Get users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code matches expected\", function () {\r",
+							"    pm.response.to.have.status(parseInt(pm.variables.get(\"expected_status\")));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response matches UserResponse schema for valid user\", function () {\r",
+							"    if (pm.variables.get(\"expected_status\") === \"200\") {\r",
+							"        var jsonData = pm.response.json();\r",
+							"        pm.expect(jsonData).to.have.property('id').that.is.a('number');\r",
+							"        pm.expect(jsonData).to.have.property('first_name').that.is.a('string');\r",
+							"        pm.expect(jsonData).to.have.property('last_name').that.is.a('string');\r",
+							"        pm.expect(jsonData).to.have.property('email').that.is.a('string');\r",
+							"        pm.expect(jsonData.email).to.equal(pm.variables.get(\"expected_email\"));\r",
+							"        pm.expect(jsonData).to.have.property('address').that.is.a('string');\r",
+							"        pm.expect(jsonData).to.have.property('city').that.is.a('string');\r",
+							"        pm.expect(jsonData).to.have.property('state').that.is.a('string');\r",
+							"        pm.expect(jsonData).to.have.property('country').that.is.a('string');\r",
+							"        pm.expect(jsonData).to.have.property('postcode').that.is.a('string');\r",
+							"        pm.expect(jsonData).to.have.property('phone').that.is.a('string');\r",
+							"        pm.expect(jsonData).to.have.property('dob').that.is.a('string');\r",
+							"    }\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Invalid userId returns 404 with correct message\", function () {\r",
+							"    if (pm.variables.get(\"expected_status\") === \"404\") {\r",
+							"        pm.expect(pm.response.json().message).to.equal(\"Requested item not found\");\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users/{{userId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

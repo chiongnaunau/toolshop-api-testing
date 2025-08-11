@@ -1,6 +1,21 @@
 {
-  "name": "toolshop_env",
-  "values": [
-    { "key": "baseUrl", "value": "http://localhost:8091" }
-  ]
+	"id": "4b30d5da-e928-4d0c-bc80-31f4abb239e9",
+	"name": "toolshop_env",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8091",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "auth_token",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2025-08-11T11:53:01.920Z",
+	"_postman_exported_using": "Postman/11.57.6"
 }

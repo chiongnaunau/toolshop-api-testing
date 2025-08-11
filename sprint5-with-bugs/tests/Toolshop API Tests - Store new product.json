@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "2d29c223-8714-44c2-8c65-71fe60d4f597",
+		"name": "Toolshop API Tests - Store new product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47470460",
+		"_collection_link": "https://chiongnaunau-0d024cef-133788.postman.co/workspace/Hung-Le-Huynh-Nhat's-Workspace~a3e0a236-bb26-4282-8bd4-0605c91a8660/collection/47470460-2d29c223-8714-44c2-8c65-71fe60d4f597?action=share&source=collection_link&creator=47470460"
+	},
+	"item": [
+		{
+			"name": "Store new product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code matches expected\", function () {\r",
+							"    pm.response.to.have.status(parseInt(pm.iterationData.get(\"expected_status\")));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains product ID for successful creation\", function () {\r",
+							"    if (pm.response.code === 201) {\r",
+							"        pm.expect(pm.response.json().id).to.be.a(\"number\");\r",
+							"    }\r",
+							"});\r",
+							"\r",
+							"pm.test(\"422 returns validation error message\", function () {\r",
+							"    if (pm.response.code === 422) {"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"description\": \"{{description}}\",\r\n    \"price\": {{price}},\r\n    \"category_id\": {{category_id}},\r\n    \"brand_id\": {{brand_id}},\r\n    \"product_image_id\": {{product_image_id}},\r\n    \"is_location_offer\": {{is_location_offer}},\r\n    \"is_rental\": {{is_rental}}\r\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/products",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,93 @@
+{
+	"id": "d409ab39-e0aa-49d8-acff-e996e406a18a",
+	"name": "Toolshop API Tests",
+	"timestamp": "2025-08-11T08:24:50.144Z",
+	"collection_id": "47470460-a0fba246-57f2-4143-84d0-21bb2f844634",
+	"folder_id": 0,
+	"environment_id": "47470460-4b30d5da-e928-4d0c-bc80-31f4abb239e9",
+	"totalPass": 9,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-08-11T08:24:37.451Z",
+	"totalFail": 6,
+	"results": [
+		{
+			"id": "ce6af57a-006a-49bf-9be8-5947ed4fe76e",
+			"name": "Update user",
+			"url": "http://localhost:8091/users/1",
+			"time": 281,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status code matches expected": false,
+				"Response indicates success for valid update": true,
+				"Invalid userId returns 404 with correct message": true,
+				"Invalid body returns 422": true,
+				"Unauthorized without token returns 401": false
+			},
+			"testPassFailCounts": {
+				"Status code matches expected": {
+					"pass": 0,
+					"fail": 3
+				},
+				"Response indicates success for valid update": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Invalid userId returns 404 with correct message": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Invalid body returns 422": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Unauthorized without token returns 401": {
+					"pass": 0,
+					"fail": 3
+				}
+			},
+			"times": [
+				11051,
+				472,
+				281
+			],
+			"allTests": [
+				{
+					"Status code matches expected": false,
+					"Response indicates success for valid update": true,
+					"Invalid userId returns 404 with correct message": true,
+					"Invalid body returns 422": true,
+					"Unauthorized without token returns 401": false
+				},
+				{
+					"Status code matches expected": false,
+					"Response indicates success for valid update": true,
+					"Invalid userId returns 404 with correct message": true,
+					"Invalid body returns 422": true,
+					"Unauthorized without token returns 401": false
+				},
+				{
+					"Status code matches expected": false,
+					"Response indicates success for valid update": true,
+					"Invalid userId returns 404 with correct message": true,
+					"Invalid body returns 422": true,
+					"Unauthorized without token returns 401": false
+				}
+			]
+		}
+	],
+	"count": 3,
+	"totalTime": 11804,
+	"collection": {
+		"requests": [
+			{
+				"id": "ce6af57a-006a-49bf-9be8-5947ed4fe76e",
+				"method": "PUT"
+			}
+		]
+	}
+}

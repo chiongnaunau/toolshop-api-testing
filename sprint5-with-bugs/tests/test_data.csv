@@ -1,6 +1,0 @@
-endpoint,method,body,expected_status,expected_field,expected_value
-/api/products,GET,,200,products,Array
-/api/orders,POST,{"userId": 1, "items": [{"productId": 1, "quantity": 2}]},200,userId,1
-/api/orders,POST,{"userId": 999, "items": []},400,,,
-/api/users/1,PUT,{"name": "John Doe", "email": "john@example.com"},200,name,John Doe
-/api/users/999,PUT,{"name": "Invalid", "email": "invalid@example.com"},404,,,

@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "2b4e1239-433b-4506-a4c2-fd19cefe2912",
+		"name": "Toolshop API Tests - Get products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47470460",
+		"_collection_link": "https://chiongnaunau-0d024cef-133788.postman.co/workspace/Hung-Le-Huynh-Nhat's-Workspace~a3e0a236-bb26-4282-8bd4-0605c91a8660/collection/47470460-2b4e1239-433b-4506-a4c2-fd19cefe2912?action=share&source=collection_link&creator=47470460"
+	},
+	"item": [
+		{
+			"name": "Get products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products?by_category={{by_category}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "by_category",
+							"value": "{{by_category}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

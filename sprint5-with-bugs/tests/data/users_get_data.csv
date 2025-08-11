@@ -1,0 +1,5 @@
+userId,expected_email,expected_status
+1,admin@practicesoftwaretesting.com,200
+999,none,404
+2, customer@practicesoftwaretesting.com, 200
+3, customer2@practicesoftwaretesting.com, 200

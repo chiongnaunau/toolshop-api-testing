@@ -1,0 +1,83 @@
+{
+	"id": "c8c237e7-e20b-4ecf-ae4d-ef6f611f1bb2",
+	"name": "Toolshop API Tests",
+	"timestamp": "2025-08-11T08:10:48.696Z",
+	"collection_id": "47470460-a0fba246-57f2-4143-84d0-21bb2f844634",
+	"folder_id": 0,
+	"environment_id": "47470460-4b30d5da-e928-4d0c-bc80-31f4abb239e9",
+	"totalPass": 8,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-08-11T08:10:36.167Z",
+	"totalFail": 4,
+	"results": [
+		{
+			"id": "7f547eb4-aa3e-4e7b-b70f-3d5d0a004aee",
+			"name": "Get users",
+			"url": "http://localhost:8091/users/3",
+			"time": 218,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code matches expected": false,
+				"Response matches UserResponse schema for valid user": true,
+				"Invalid userId returns 404 with correct message": true
+			},
+			"testPassFailCounts": {
+				"Status code matches expected": {
+					"pass": 0,
+					"fail": 4
+				},
+				"Response matches UserResponse schema for valid user": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Invalid userId returns 404 with correct message": {
+					"pass": 4,
+					"fail": 0
+				}
+			},
+			"times": [
+				10685,
+				506,
+				201,
+				218
+			],
+			"allTests": [
+				{
+					"Status code matches expected": false,
+					"Response matches UserResponse schema for valid user": true,
+					"Invalid userId returns 404 with correct message": true
+				},
+				{
+					"Status code matches expected": false,
+					"Response matches UserResponse schema for valid user": true,
+					"Invalid userId returns 404 with correct message": true
+				},
+				{
+					"Status code matches expected": false,
+					"Response matches UserResponse schema for valid user": true,
+					"Invalid userId returns 404 with correct message": true
+				},
+				{
+					"Status code matches expected": false,
+					"Response matches UserResponse schema for valid user": true,
+					"Invalid userId returns 404 with correct message": true
+				}
+			]
+		}
+	],
+	"count": 4,
+	"totalTime": 11610,
+	"collection": {
+		"requests": [
+			{
+				"id": "7f547eb4-aa3e-4e7b-b70f-3d5d0a004aee",
+				"method": "GET"
+			}
+		]
+	}
+}

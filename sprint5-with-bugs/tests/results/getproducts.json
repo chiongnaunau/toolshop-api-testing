@@ -1,0 +1,92 @@
+{
+	"id": "d4e3fb93-5ad7-4d49-b401-6a17d8c98e0b",
+	"name": "Toolshop API Tests",
+	"timestamp": "2025-08-11T07:56:48.415Z",
+	"collection_id": "47470460-a0fba246-57f2-4143-84d0-21bb2f844634",
+	"folder_id": 0,
+	"environment_id": "47470460-4b30d5da-e928-4d0c-bc80-31f4abb239e9",
+	"totalPass": 4,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-08-11T07:56:35.858Z",
+	"totalFail": 12,
+	"results": [
+		{
+			"id": "a59045e3-b036-4905-8ab5-424113b3658d",
+			"name": "Get products",
+			"url": "http://localhost:8091/products?category_id=999",
+			"time": 189,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code matches expected": false,
+				"Response length meets expectation": false,
+				"Each product matches ProductResponse schema": true,
+				"Unauthorized without token returns 401": false
+			},
+			"testPassFailCounts": {
+				"Status code matches expected": {
+					"pass": 0,
+					"fail": 4
+				},
+				"Response length meets expectation": {
+					"pass": 0,
+					"fail": 4
+				},
+				"Each product matches ProductResponse schema": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Unauthorized without token returns 401": {
+					"pass": 0,
+					"fail": 4
+				}
+			},
+			"times": [
+				9332,
+				489,
+				208,
+				189
+			],
+			"allTests": [
+				{
+					"Status code matches expected": false,
+					"Response length meets expectation": false,
+					"Each product matches ProductResponse schema": true,
+					"Unauthorized without token returns 401": false
+				},
+				{
+					"Status code matches expected": false,
+					"Response length meets expectation": false,
+					"Each product matches ProductResponse schema": true,
+					"Unauthorized without token returns 401": false
+				},
+				{
+					"Status code matches expected": false,
+					"Response length meets expectation": false,
+					"Each product matches ProductResponse schema": true,
+					"Unauthorized without token returns 401": false
+				},
+				{
+					"Status code matches expected": false,
+					"Response length meets expectation": false,
+					"Each product matches ProductResponse schema": true,
+					"Unauthorized without token returns 401": false
+				}
+			]
+		}
+	],
+	"count": 4,
+	"totalTime": 10218,
+	"collection": {
+		"requests": [
+			{
+				"id": "a59045e3-b036-4905-8ab5-424113b3658d",
+				"method": "GET"
+			}
+		]
+	}
+}

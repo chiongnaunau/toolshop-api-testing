@@ -1,0 +1,48 @@
+{
+	"id": "0344ed1e-3dc1-4ffa-bfd3-e66b5abe3729",
+	"name": "Toolshop API Tests",
+	"timestamp": "2025-08-11T09:57:10.403Z",
+	"collection_id": "47470460-a0fba246-57f2-4143-84d0-21bb2f844634",
+	"folder_id": 0,
+	"environment_id": "47470460-4b30d5da-e928-4d0c-bc80-31f4abb239e9",
+	"totalPass": 0,
+	"delay": 0,
+	"persist": true,
+	"status": "error",
+	"startedAt": "2025-08-11T09:57:00.597Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "80f8740c-7f1c-46e9-8cab-cfccfac7347c",
+			"name": "Store new product",
+			"url": "http://localhost:8091/products",
+			"time": 435,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6698,
+				481,
+				435
+			],
+			"allTests": [
+				{},
+				{},
+				{}
+			]
+		}
+	],
+	"count": 3,
+	"totalTime": 7614,
+	"collection": {
+		"requests": [
+			{
+				"id": "80f8740c-7f1c-46e9-8cab-cfccfac7347c",
+				"method": "POST"
+			}
+		]
+	}
+}
