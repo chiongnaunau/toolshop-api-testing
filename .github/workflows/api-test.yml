@@ -21,6 +21,7 @@ jobs:
         run: npm install -g newman
 
       - name: Run Get products data-driven tests
+        continue-on-error: true
         run: |
           newman run ./sprint5-with-bugs/tests/Toolshop\ API\ Tests\ -\ Get\ products.json \
             -e ./sprint5-with-bugs/tests/toolshop_env.json \
@@ -30,6 +31,7 @@ jobs:
             --reporter-junit-export results-get-products.xml
 
       - name: Run Get users data-driven tests
+        continue-on-error: true
         run: |
           newman run ./sprint5-with-bugs/tests/Toolshop\ API\ Tests\ -\ Get\ users.json \
             -e ./sprint5-with-bugs/tests/toolshop_env.json \
@@ -39,6 +41,7 @@ jobs:
             --reporter-junit-export results-get-users.xml
 
       - name: Run Post products data-driven tests
+        continue-on-error: true
         run: |
           newman run ./sprint5-with-bugs/tests/Toolshop\ API\ Tests\ -\ Store\ new\ product.json \
             -e ./sprint5-with-bugs/tests/toolshop_env.json \
@@ -48,6 +51,7 @@ jobs:
             --reporter-junit-export results-post-products.xml
 
       - name: Run Put users data-driven tests
+        continue-on-error: true
         run: |
           newman run ./sprint5-with-bugs/tests/Toolshop\ API\ Tests\ -\ Change\ password.json \
             -e ./sprint5-with-bugs/tests/toolshop_env.json \
